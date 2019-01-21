@@ -8,6 +8,7 @@ const initialState = {
 export default function(state = initialState,action) {
     switch(action.type) {
         case VIDEOS_ACTION.FETCH_VIDEOS : {
+            console.log(action.payload.status);
             return { ...state, list : action.payload.data.items ,selected :action.payload.data.items[0] };
         }
         case VIDEOS_ACTION.SELECTED_VIDEO : {
