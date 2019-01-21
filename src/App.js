@@ -7,13 +7,11 @@ import VideoDetail from './videos/components/videodetail.component';
 class App extends Component {
   render() { 
     return (
-      <div className="container">
-        <div className="App">
-           <SearchBar />
-           <VideoList />
-           <VideoDetail />
-        </div>
-      </div>
+          <div className="container">
+            <SearchBar />
+            <VideoList />
+            <VideoDetail />
+          </div>
     );
   }
 }
