@@ -1,11 +1,32 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 class VideoDetail extends Component {
+    renderContents = () => {
+        if(this.props.videoSelected) {
+            const videoId = this.props.videoSelected.id.videoId;
+            const url = 'https://www.youtube.com/embed/'+ videoId;
+            return (
+                    <div className="video-detail col-md-8">
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe title="youtubevideo" className="embed-responsive-item" src={url}></iframe>
+                    </div>
+                      <div className="details">
+                          <div>{this.props.videoSelected.snippet.title}</div>
+                          <div>{this.props.videoSelected.snippet.description}</div>
+                      </div>
+                </div>
+            )} else { return (<div />)}
+    }
     render(){
         return( 
-            <div className="video-detail col-md-8">Video Detail</div>
+          this.renderContents()
         )
      }
 }
 
-export default VideoDetail;
+function mapStateToProps({videos}) {
+    return {
+        videoSelected : videos.selected
+    }
+}
+export default connect(mapStateToProps,null)(VideoDetail);

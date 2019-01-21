@@ -5,11 +5,11 @@ import { fetchVideos } from '../actions/videos.action';
 
 class VideoList extends Component {
     componentDidMount() {
-        this.props.fetchVideos("surfers");
+        this.props.fetchVideos("surfer");
     }
     renderItems = () => {
-        if(this.props.videos.list) {
-           return this.props.videos.list.map(item => {
+        if(this.props.videos) {
+           return this.props.videos.map(item => {
                return <VideoItem item = {item} key={item.etag} />
            })
         }
@@ -26,7 +26,7 @@ class VideoList extends Component {
 
 function mapStateToProps({videos}) {
     return {
-        videos
+        videos : videos.list
     }
 }
 

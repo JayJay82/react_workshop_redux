@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
+import {selectVideo} from '../actions/videos.action';
 class VideoItem extends Component {
    
     render() {
@@ -7,7 +8,7 @@ class VideoItem extends Component {
         const {item} = this.props;
         const imageUrl = item.snippet.thumbnails.default.url;
         return (
-            <li  key={item.etag} className="list-group-item">
+            <li  key={item.etag} onClick={() => { this.props.selectVideo(item.etag) }} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">
                     <img className="media-object" alt="test" src={imageUrl} />
@@ -22,4 +23,4 @@ class VideoItem extends Component {
     }
 }
 
-export default VideoItem;
+export default connect(null, {selectVideo})(VideoItem);
