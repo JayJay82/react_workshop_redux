@@ -9,7 +9,7 @@ class App extends Component {
     return (
           <div className="container">
             <SearchBar />
-            <div class="row">
+            <div className="row">
               <VideoList />
               <VideoDetail />
             </div>
