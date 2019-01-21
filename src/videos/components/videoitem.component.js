@@ -6,7 +6,6 @@ class VideoItem extends Component {
       if(this.props.item) {
         const {item} = this.props;
         const imageUrl = item.snippet.thumbnails.default.url;
-        console.log(imageUrl);
         return (
             <li  key={item.etag} className="list-group-item">
             <div className="video-list media">
