@@ -9,9 +9,11 @@ class App extends Component {
     return (
           <div className="container">
             <SearchBar />
-            <VideoList />
-            <VideoDetail />
-          </div>
+            <div class="row">
+              <VideoList />
+              <VideoDetail />
+            </div>
+          </div>  
     );
   }
 }

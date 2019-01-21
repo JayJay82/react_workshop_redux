@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class VideoItem extends Component {
     render() {
-        return <div>VideoItem</div>
+        return <li className="list-group-item">VideoItem</li>
     }
 }
 
