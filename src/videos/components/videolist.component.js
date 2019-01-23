@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import VideoItem from './videoitem.component';
 import { fetchVideos } from '../actions/videos.action';
+import { getVideosState } from '../selectors/videos.selector';
 
 class VideoList extends Component {
     componentDidMount() {
@@ -24,9 +25,9 @@ class VideoList extends Component {
     }
 }
 
-function mapStateToProps({videos}) {
+function mapStateToProps(state) {
     return {
-        videos : videos.list
+        videos : getVideosState(state)
     }
 }
 
