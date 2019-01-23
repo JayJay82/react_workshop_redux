@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { getSelectedItem } from '../selectors/videos.selector';
 class VideoDetail extends Component {
     renderContents = () => {
         if(this.props.videoSelected) {
@@ -24,9 +25,9 @@ class VideoDetail extends Component {
      }
 }
 
-function mapStateToProps({videos}) {
+function mapStateToProps(state) {
     return {
-        videoSelected : videos.selected
+        videoSelected : getSelectedItem(state)
     }
 }
 export default connect(mapStateToProps,null)(VideoDetail);
