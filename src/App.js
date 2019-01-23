@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchBar from './videos/components/searchbar.component';
-import VideoList from './videos/components/videolist.component';
-import VideoDetail from './videos/components/videodetail.component';
+import Routes from './routes/routes';
+
 
 class App extends Component {
   render() { 
     return (
-          <div className="container">
-            <SearchBar />
-            <div className="row">
-              <VideoList />
-              <VideoDetail />
-            </div>
-          </div>  
+      <div>
+      <header>fixed</header>
+        <div className="container">
+            <Routes />
+        </div>   
+        <footer>fixed</footer>
+      </div>
     );
   }
 }
